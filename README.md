@@ -6,7 +6,7 @@
 
 A real-time chatbot leveraging Google's Gemini for document analysis of PDFs, built with Flask and WebSockets.
 
-![Chat Interface](https://via.placeholder.com/800x400.png?text=Chat+Interface+Preview)
+![Chat Interface](https://llm-chatbot-9.onrender.com/)
 
 ## Features
 
