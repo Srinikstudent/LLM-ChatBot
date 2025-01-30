@@ -17,7 +17,7 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 
 
 PDF_PATHS = ["Mobily AR_2022_English (1).pdf", "Operation-and-Maintenance-Manual_SEBU8407-06 (1).pdf"]
-GEMINI_API_KEY = "AIzaSyCmHaQs88OMX5teBYOi2yMPTizsLgQR5_I"
+GEMINI_API_KEY = GEMINI_API_KEY
 
 
 
