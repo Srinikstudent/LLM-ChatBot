@@ -39,9 +39,10 @@ graph TD
     B -->|Existing Session| D[Retrieve Memory]
     C --> E[Process Query]
     D --> E
-    E --> F[Retrieve Relevant Docs (FAISS)]
-    F --> G[Generate Response (Gemini AI)]
+    E --> F[Retrieve Documents from Vector Store]
+    F --> G[Generate Response using LLM]
     G --> H[Return Answer to User]
+
 
 
 
