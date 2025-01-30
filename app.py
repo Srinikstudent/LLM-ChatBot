@@ -17,7 +17,11 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 
 
 PDF_PATHS = ["Mobily AR_2022_English (1).pdf", "Operation-and-Maintenance-Manual_SEBU8407-06 (1).pdf"]
-GEMINI_API_KEY = GEMINI_API_KEY
+GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
+
+# Add error checking right after:
+if not GEMINI_API_KEY:
+    raise ValueError("No GEMINI_API_KEY found in environment variables")
 
 
 
