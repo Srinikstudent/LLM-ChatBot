@@ -1,5 +1,6 @@
-import os
 import eventlet
+eventlet.monkey_patch()
+import os
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
@@ -12,7 +13,7 @@ from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 
 
 
-eventlet.monkey_patch()
+
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
