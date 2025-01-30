@@ -1,4 +1,5 @@
 import os
+import eventlet
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
@@ -11,7 +12,7 @@ from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 
 
 
-
+eventlet.monkey_patch()
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
@@ -145,8 +146,13 @@ application = app
 
 
 if __name__ == '__main__':
-    socketio.run(app, 
-                 host='0.0.0.0',
-                 port=int(os.environ.get('PORT', 5000)),
-                 debug=False)
+    port = int(os.environ.get('PORT', 5000))
+    print(f"Starting server on port {port}")  # Add logging
+    socketio.run(
+        app,
+        host='0.0.0.0',
+        port=port,
+        debug=False,
+        allow_unsafe_werkzeug=True
+    )
 
