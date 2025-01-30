@@ -74,7 +74,7 @@ Previous Conversation: {chat_history}
 """
 
 prompt_template = ChatPromptTemplate.from_messages([
-    ("system", SYSTEM_PROMPT),
+    ("human", SYSTEM_PROMPT),  # Changed from "system" to "human"
     HumanMessagePromptTemplate.from_template("{question}")
 ])
 
